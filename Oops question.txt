@@ -1,0 +1,174 @@
+import java.util.*;
+
+class Hatchback {
+        int basic = 2000 ; 
+        int engine = 5000 ; 
+        int clutch = 2000 ; 
+        int brake = 1000 ; 
+        int gear = 3000 ;
+        Hatchback(){
+            
+        }
+  }
+
+class Sedan {
+        int basic = 2000 ; 
+        int engine = 5000 ; 
+        int clutch = 2000 ; 
+        int brake = 1000 ; 
+        int gear = 3000 ;
+        Sedan(){
+            
+        }
+  }
+
+class SUV {
+        int basic = 2000 ; 
+        int engine = 5000 ; 
+        int clutch = 2000 ; 
+        int brake = 1000 ; 
+        int gear = 3000 ;
+        SUV(){
+            
+        }
+  }
+
+public class Main {
+
+	public static void main(String[] args) {
+ 
+		Scanner sc = new Scanner (System.in) ;
+		
+		//System.out.println("Enter Type of vehicle") ;
+		
+		String type = sc.next();
+		
+		//  System.out.println("Enter all Service codes") ; 
+	       
+          ArrayList<String> codes  = new ArrayList<> ();
+        
+        int N = sc.nextInt() ; // number of codes 
+         for(int i = 0 ; i< N ; i++){
+             
+             String code = sc.next() ;
+             
+            codes.add(code) ;
+           
+         }
+         
+         if (type.equals("Hatchback")){
+            
+        	 Hatchback obj = new Hatchback() ;
+        
+         
+         int amount = 0 ; 
+         
+         for(String cmd : codes){
+             if(cmd.equals("BS01")){
+                 int charge = obj.basic ; 
+            System.out.println("Charges for Basic Servicing -"+ '₹'+  charge) ; 
+                 
+                 amount += charge ; 
+                }else if (cmd.equals("EF01")) {
+                	int charge = obj.engine ; 
+                    System.out.println("Charges for Engine Fixing -"+ '₹'+ charge) ; 
+                    amount += charge ; 
+                }else if (cmd.equals("CF01")) {
+                	int charge = obj.clutch ; 
+                    System.out.println("Charges for Clutch Fixing -"+ '₹'+  charge) ; 
+                    amount += charge ; 
+                }else if (cmd.equals("BF01")) {
+                	int charge = obj.brake ; 
+                    System.out.println("Charges for Brake Fixing -"+ '₹'+  charge) ; 
+                    amount += charge ; 
+                }else if (cmd.equals("GF01")) {
+                	int charge = obj.gear ; 
+                    System.out.println("Charges for Gear Fixing -"+ '₹'+  charge) ; 
+                    amount += charge ; 
+                }
+		
+              if (amount > 10000) {
+            	  
+            	  System.out.println("Complementry Cleaning is provided ") ; 
+              } 
+	}
+         System.out.println("Total amount" +"-₹" +  amount) ; 
+         
+         }
+    
+         else if (type.equals("Sedan")) {
+        	 Sedan obj = new Sedan() ;
+             
+             
+        	 int amount = 0 ; 
+             
+             for(String cmd : codes){
+                 if(cmd.equals("BS01")){
+                     int charge = obj.basic ; 
+                System.out.println("Charges for Basic Servicing -"+ '₹'+ charge) ; 
+                     
+                     amount += charge ; 
+                    }else if (cmd.equals("EF01")) {
+                    	int charge = obj.engine ; 
+                        System.out.println("Charges for Engine Fixing -"+ '₹'+  charge) ; 
+                        amount += charge ; 
+                    }else if (cmd.equals("CF01")) {
+                    	int charge = obj.clutch ; 
+                        System.out.println("Charges for Clutch Fixing -"+ '₹'+charge) ; 
+                        amount += charge ; 
+                    }else if (cmd.equals("BF01")) {
+                    	int charge = obj.brake ; 
+                        System.out.println("Charges for Brake Fixing -"+ '₹'+charge) ; 
+                        amount += charge ; 
+                    }else if (cmd.equals("GF01")) {
+                    	int charge = obj.gear ; 
+                        System.out.println("Charges for Gear Fixing -"+ '₹'+ charge) ; 
+                        amount += charge ; 
+                    }
+    		
+                  if (amount > 10000) {
+                	  
+                	  System.out.println("Complementry Cleaning is provided -") ; 
+                  }    
+    	}
+             System.out.println("Total amount" +"-₹" +  amount) ; 
+             
+         }else if (type.equals("SUV")) {
+        	 Hatchback obj = new Hatchback() ;
+             
+        	 int amount = 0 ; 
+             
+             for(String cmd : codes){
+                 if(cmd.equals("BS01")){
+                     int charge = obj.basic ; 
+                System.out.println("Charges for Basic Servicing -"+ '₹'+ charge) ; 
+                     
+                     amount += charge ; 
+                    }else if (cmd.equals("EF01")) {
+                    	int charge = obj.engine ; 
+                        System.out.println("Charges for Engine Fixing -"+ '₹'+ charge) ; 
+                        amount += charge ; 
+                    }else if (cmd.equals("CF01")) {
+                    	int charge = obj.clutch ; 
+                        System.out.println("Charges for Clutch Fixing -"+ '₹' + charge) ; 
+                        amount += charge ; 
+                    }else if (cmd.equals("BF01")) {
+                    	int charge = obj.brake ; 
+                        System.out.println("Charges for Brake Fixing -"+ '₹'+ charge) ; 
+                        amount += charge ; 
+                    }else if (cmd.equals("GF01")) {
+                    	int charge = obj.gear ; 
+                        System.out.println("Charges for Gear Fixing -"+ '₹'+  charge) ; 
+                        amount += charge ; 
+                    }
+    		
+                  if (amount > 10000) {
+                	  
+                	  System.out.println("Complementry Cleaning is provided -") ; 
+                  }    
+    	}
+             System.out.println("Total amount" +"-₹" +  amount) ; 
+         }
+	}
+
+}
